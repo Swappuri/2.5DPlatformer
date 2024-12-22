@@ -71,6 +71,7 @@ const loadFBXAnimations = (fbxFiles, onLoadComplete) => {
   let loadedCount = 0;
   fbxFiles.forEach(({ name, path }, index) => {
     setTimeout(() => {
+      console.log(name);
       loader.load(path, (fbx) => {
         fbx.scale.set(0.02, 0.02, 0.02);
         fbx.traverse((object) => {
