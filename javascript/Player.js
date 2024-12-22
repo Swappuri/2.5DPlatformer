@@ -86,17 +86,6 @@ class Player {
 
     this.mixer.update(delta * 1.25);
 
-    // if (this.isJumping) {
-    //   this.verticalVelocity += this.gravity * delta; 
-    //   this.model.position.y = Math.max(0, this.model.position.y + this.verticalVelocity * delta);
-
-    //   if (this.model.position.y === 0) {
-    //     this.isJumping = false;
-    //     this.isJumpingAnimationPlaying = false;
-    //     this.verticalVelocity = 0;
-    //   }
-    // }
-
     this.verticalVelocity += this.gravity * delta; 
     this.model.position.y += this.verticalVelocity * delta;
     for (let asset of assets) {
@@ -174,7 +163,9 @@ class Player {
   }
 
   updateCameraY(moveY) {
-    this.camera.position.y += moveY;
+    const targetY = this.model.position.y + 5;
+    const smoothingFactor = 0.1;
+    this.camera.position.y += (targetY - this.camera.position.y) * smoothingFactor;
     this.cameraTarget.y = this.model.position.y;
   }
 
