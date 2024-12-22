@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=VT323&display=swap');
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+canvas {
+  display: block;
+}
+
+.loading-screen, .ending-screen {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 1); 
+  display: flex;
+  flex-flow: column;
+  justify-content: center; 
+  align-items: center;
+  gap: 30px; 
+  z-index: 2;
+  font-size: 24px;
+}
+
+.ending-screen {
+  gap: 20px;
+}
+
+.time-taken {
+  display: inline;
+}
+
+.loading-square {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: 8px solid white;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  animation: rotate-clockwise 2s infinite;
+}
+
+.loading-square-inside {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: white;
+  animation: rotate-counterclockwise 2s infinite;
+}
+
+.loading-text, .ending-text {
+  letter-spacing: 3px;
+}
+
+.play-again-button {
+  padding: 5px 10px 5px 10px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  transition: 0.1s ease-in-out;
+}
+
+.play-again-button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes rotate-clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-counterclockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-720deg);
+  }
+}
+
+.controls {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transform: translate(-5%, -5%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #c4f4ff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1;
+  display: none;
+}
+
+.controls h2 {
+  margin: 0 0 10px;
+}
+
+.controls p {
+  margin: 5px 0;
+}
+
+.close-controls {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #c4f4ff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+.close-controls:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #c4f4ff;
+}
+
+.controls-text {
+  text-align: left;
+}
+
+.bold {
+  font-weight: bold;
+  color: #c4f4ff;
+}
